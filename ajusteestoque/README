@@ -6,4 +6,9 @@ Recomendável seguir os sripts sugeridos para iniciar usuários no banco...
 Ao utilizar algum software para teste das APIs, como Postman, seguir os objetosTeste sugeridos...
 
 O algoritmo de criptografia de senha do banco não é compativel com a descriptografia das funções de verificação...
+<<<<<<< HEAD
 Usar a criptografia gerada em: https://bcrypt-generator.com/ ou seguir os script .txt
+=======
+Usar a criptografia gerada em: https://bcrypt-generator.com/
+ou seguir os script .txt
+>>>>>>> e9b4ca8e725a3b920e060e4ea19ae509f62da785
