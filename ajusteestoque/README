@@ -1,2 +1,3 @@
 O algoritmo de criptografia de senha do banco não é compativel com a descriptografia das funções de verificação...
 Usar a criptografia gerada em: https://bcrypt-generator.com/
+ou seguir os script .txt
