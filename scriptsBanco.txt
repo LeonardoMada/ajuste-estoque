@@ -1,4 +1,4 @@
-criar dois usuários no banco para fazer login
+criar dois usuários no banco para fazer login, com senha criptografada ambos tem senha "123"
 
 insert into usuario (id, login, password, role) values ( 1,
 'admin', '$2a$12$SJLrTZ2oNztX0Q0tbGpi9eTSBnbE/iaHS4vANMLNu40iII5TOhKD2',
