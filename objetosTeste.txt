@@ -26,7 +26,7 @@ Enviar e token gerado do login para "/ajuste/adicionar"
     "motivo": "Queda",
     "produto" : 
     {
-        "id": 0,
+        "id": 1,
         "descricao": "produto1",
         "quantidade": 90
     },
