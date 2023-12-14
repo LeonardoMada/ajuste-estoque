@@ -17,7 +17,7 @@ public class TokenService {
 
     public String gerarToken(Usuario usuario) {
 
-        LocalDateTime expiresAt = LocalDateTime.now().plusSeconds(30);
+        LocalDateTime expiresAt = LocalDateTime.now().plusMinutes(5);
         Date expirationDate = Date.from(expiresAt.toInstant(ZoneOffset.of("-03:00")));
 
         return JWT.create()

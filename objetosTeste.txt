@@ -1,0 +1,34 @@
+Em caso de teste da API (bearer token)
+
+Enviar para "/login" tela de login, retorna um token com role admin, ou user (depende do usuario)
+{
+    "login": "admin",
+    "password": "123"
+}
+
+{
+    "login": "user",
+    "password": "123"
+}
+
+Enviar e token gerado do login para "/produto/adicionar"
+{
+    "id": 0,
+    "descricao": "produto1",
+    "quantidade": 100
+}
+
+Enviar e token gerado do login para "/ajuste/adicionar"
+{
+    "id":0,
+    "quantidade": 10,
+    "tipo": "Retirada",
+    "motivo": "Queda",
+    "produto" : 
+    {
+        "id": 0,
+        "descricao": "produto1",
+        "quantidade": 90
+    },
+    "data": "12-12-2023"
+}

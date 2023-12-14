@@ -1,0 +1,10 @@
+criar dois usuários no banco para fazer login
+
+insert into usuario (id, login, password, role) values ( 1,
+'admin', '$2a$12$SJLrTZ2oNztX0Q0tbGpi9eTSBnbE/iaHS4vANMLNu40iII5TOhKD2',
+'admin')
+
+insert into usuario (id, login, password, role) values (2,
+'user', '$2a$12$SJLrTZ2oNztX0Q0tbGpi9eTSBnbE/iaHS4vANMLNu40iII5TOhKD2',
+'user')
+
