@@ -22,6 +22,10 @@ public class Produto {
     @Column(name = "quantidade")
     private int quantidade;
 
+    public Produto(Long id) {
+        this(id, "", 0);
+    }
+
     public Produto() {
         this(0L, "", 0);
     }

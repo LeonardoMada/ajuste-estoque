@@ -24,23 +24,29 @@ public class AjusteService {
     @Transactional
     public Ajuste insertAjuste(Ajuste ajuste) {
 
-        Produto produto = ajuste.getProduto();
+        Produto produto = produtoRepository.findById(ajuste.getProduto().getId()).orElse(null);
 
-        if (ajuste.getTipo() == Tipo.Retirada) { // É UMA RETIRADA
-            if (produto.getQuantidade() >= ajuste.getQuantidade()) {
+        if (produto != null) {
+            if (ajuste.getTipo() == Tipo.Retirada) {
+
+                if (produto.getQuantidade() >= ajuste.getQuantidade()) {
+                    produto.setQuantidade(
+                            produto.getQuantidade() - ajuste.getQuantidade());
+                } else {
+                    return null; // Tratar uma mensagem de erro
+                }
+
+            } else if (ajuste.getTipo() == Tipo.Adição) {
+
                 produto.setQuantidade(
-                        produto.getQuantidade() - ajuste.getQuantidade());
-
+                        produto.getQuantidade() + ajuste.getQuantidade());
             } else {
-                return null;
+                return null; // Tratar uma mensagem de erro
             }
-        } else // É UMA ADIÇÃO
-        {
-            produto.setQuantidade(
-                    produto.getQuantidade() + ajuste.getQuantidade());
+            produtoRepository.save(produto);
+            return ajusteRepository.save(ajuste);
         }
-        produtoRepository.save(produto);
-        return ajusteRepository.save(ajuste);
+        return null; // Tratar uma mensagem de erro
     }
 
     @Transactional
@@ -52,9 +58,11 @@ public class AjusteService {
             if (ajuste.getTipo() == Tipo.Retirada) {
                 produto.setQuantidade(
                         produto.getQuantidade() + ajuste.getQuantidade());
-            } else {
+            } else if (ajuste.getTipo() == Tipo.Adição) {
                 produto.setQuantidade(
                         produto.getQuantidade() - ajuste.getQuantidade());
+            } else {
+                return false; // Tratar uma mensagem de erro
             }
 
             produtoRepository.save(produto);

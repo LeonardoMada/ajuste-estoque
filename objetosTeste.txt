@@ -24,11 +24,6 @@ Enviar e token gerado do login para "/ajuste/adicionar"
     "quantidade": 10,
     "tipo": "Retirada",
     "motivo": "Queda",
-    "produto" : 
-    {
-        "id": 1,
-        "descricao": "produto1",
-        "quantidade": 90
-    },
+    "produto" : 1,
     "data": "12-12-2023"
 }
